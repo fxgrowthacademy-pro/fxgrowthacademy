@@ -9,7 +9,7 @@
   <meta property="og:description" content="Explore free XAUUSD trade ideas, live updates and educational market content." />
   <meta property="og:type" content="website" />
   <title>FX Growth Academy | Free XAUUSD Telegram Channel</title>
-  <!-- Website Version 4.1: real TradingView hero chart -->
+  <!-- Website Version 4.2: Meta Pixel and TelegramClick tracking enabled -->
 
   <!-- Paste your Meta Pixel base code directly below this comment. -->
 
@@ -136,6 +136,27 @@
       .container{width:min(100% - 24px,var(--max))}.nav{min-height:68px}.brand img{width:46px;height:46px}.brand{font-size:14px}.brand small{font-size:8px}.nav-cta{padding:9px 12px;font-size:12px}.hero{padding:48px 0 54px;gap:32px}h1{font-size:43px;letter-spacing:-1.8px}.hero-copy{font-size:16px}.cta-row{display:grid}.btn{width:100%}.trust-row{grid-template-columns:1fr}.hero-visual{min-height:420px}.terminal{border-radius:22px}.chart{height:230px}.quote{grid-template-columns:1fr}.logo-float{right:7px;top:-30px;width:94px;height:94px}.logo-float img{width:76px;height:76px}.section-head{margin-bottom:30px}section{padding:68px 0}.phones{gap:10px}.phone{padding:6px;border-radius:21px}.phone img{border-radius:16px}.phone:before{top:10px;width:48px;height:11px}.phone:nth-child(2){transform:translateY(14px)}.steps{grid-template-columns:1fr}.vip-panel{padding:31px 22px}.footer-grid{flex-direction:column}.floating{width:54px;height:54px}
     }
   </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1128496149292590');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1128496149292590&ev=PageView&noscript=1"
+         alt="" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
 </head>
 <body>
   <header class="topbar">
@@ -294,16 +315,26 @@
 
   <a class="floating telegram-link" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener" aria-label="Join FX Growth Academy on Telegram">✈</a>
 
+  
+
   <script>
-    document.querySelectorAll('.telegram-link').forEach(function(link){
-      link.addEventListener('click',function(){
-        if(typeof fbq === 'function') fbq('trackCustom','TelegramClick');
+    document.addEventListener('DOMContentLoaded', function () {
+      const telegramLinks = document.querySelectorAll(
+        'a[href*="t.me/fxgrowthacademy"], a[href*="telegram.me/fxgrowthacademy"]'
+      );
+
+      telegramLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (typeof fbq === 'function') {
+            fbq('trackCustom', 'TelegramClick', {
+              destination: 'FX Growth Academy Telegram',
+              page_location: window.location.href
+            });
+          }
+        });
       });
     });
-    const observer=new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}})
-    },{threshold:.12});
-    document.querySelectorAll('.reveal:not(.show)').forEach(el=>observer.observe(el));
   </script>
+
 </body>
 </html>
