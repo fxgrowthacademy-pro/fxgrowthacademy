@@ -9,6 +9,7 @@
   <meta property="og:description" content="Explore free XAUUSD trade ideas, live updates and educational market content." />
   <meta property="og:type" content="website" />
   <title>FX Growth Academy | Free XAUUSD Telegram Channel</title>
+  <!-- Website Version 4.1: real TradingView hero chart -->
 
   <!-- Paste your Meta Pixel base code directly below this comment. -->
 
@@ -77,8 +78,9 @@
     .terminal-head{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
     .dots{display:flex;gap:6px}.dots i{width:8px;height:8px;border-radius:50%;background:#44566a}.dots i:nth-child(1){background:#ff7c78}.dots i:nth-child(2){background:#f7ca65}.dots i:nth-child(3){background:#56d69f}
     .terminal-head span{font-size:12px;color:var(--muted);font-weight:850}
-    .chart{position:relative;height:290px;padding:28px 24px;background:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;overflow:hidden}
-    .chart svg{position:absolute;inset:34px 20px 24px;width:calc(100% - 40px);height:calc(100% - 58px)}
+    .chart{position:relative;height:320px;overflow:hidden;background:#07111d}
+    .chart-image{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.92) contrast(1.04) brightness(.72);transform:scale(1.015)}
+    .chart:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,15,27,.08),rgba(5,15,27,.30));pointer-events:none}
     .quote{padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
     .quote div{padding:13px;border-radius:13px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}
     .quote small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.7px;font-weight:900}.quote strong{display:block;margin-top:4px;font-size:15px}
@@ -173,12 +175,7 @@
         <div class="terminal">
           <div class="terminal-head"><div class="dots"><i></i><i></i><i></i></div><span>XAUUSD • MARKET VIEW</span></div>
           <div class="chart">
-            <svg viewBox="0 0 500 260" preserveAspectRatio="none" aria-hidden="true">
-              <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#229ed9" stop-opacity=".35"/><stop offset="100%" stop-color="#229ed9" stop-opacity="0"/></linearGradient></defs>
-              <path d="M0,216 C30,210 44,190 72,198 C102,207 118,170 145,178 C177,188 194,143 220,154 C248,166 262,122 290,130 C322,139 336,94 365,106 C394,119 412,65 438,76 C465,88 478,38 500,48 L500,260 L0,260 Z" fill="url(#area)"/>
-              <path d="M0,216 C30,210 44,190 72,198 C102,207 118,170 145,178 C177,188 194,143 220,154 C248,166 262,122 290,130 C322,139 336,94 365,106 C394,119 412,65 438,76 C465,88 478,38 500,48" fill="none" stroke="#57c9f3" stroke-width="5" stroke-linecap="round"/>
-              <circle cx="500" cy="48" r="8" fill="#45d6a5"/>
-            </svg>
+            <img class="chart-image" src="hero-chart.png" alt="FX Growth Academy XAUUSD TradingView market analysis chart" />
           </div>
           <div class="quote">
             <div><small>Market</small><strong>XAUUSD</strong></div>
