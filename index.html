@@ -3,415 +3,804 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Join FX Growth Academy's free Telegram channel for XAUUSD setups, live market updates, transparent results, and VIP membership details." />
+  <meta name="theme-color" content="#06111f" />
+  <meta name="description" content="Join FX Growth Academy's free Telegram channel for XAUUSD setups, live trade updates, transparent results, and VIP membership information." />
+  <meta property="og:title" content="FX Growth Academy | Free Gold Trading Channel" />
+  <meta property="og:description" content="Follow XAUUSD setups, trade updates, transparent signal results and VIP membership information." />
+  <meta property="og:type" content="website" />
   <title>FX Growth Academy | Free Gold Trading Channel</title>
+
+  <!--
+    META PIXEL:
+    Paste your Meta Pixel base code here later, just before </head>.
+    Track the Telegram buttons with the custom event already included below.
+  -->
+
   <style>
-    :root {
-      --bg: #07111f;
-      --bg-soft: #0d1b2d;
-      --card: rgba(255,255,255,0.06);
-      --line: rgba(255,255,255,0.12);
-      --text: #f7f9fc;
-      --muted: #aeb9c8;
-      --accent: #20a4f3;
-      --accent-2: #2ed6a1;
-      --warning: #ffd166;
-      --shadow: 0 18px 60px rgba(0,0,0,.35);
-      --radius: 22px;
+    :root{
+      --bg:#06111f;
+      --bg2:#0a192b;
+      --panel:rgba(255,255,255,.055);
+      --panel-strong:rgba(255,255,255,.085);
+      --line:rgba(255,255,255,.11);
+      --text:#f7fbff;
+      --muted:#a9b7c8;
+      --blue:#229ed9;
+      --blue2:#0e7ec0;
+      --green:#35d7a0;
+      --gold:#f4c95d;
+      --shadow:0 24px 70px rgba(0,0,0,.38);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1160px;
     }
 
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(32,164,243,.18), transparent 34%),
-        radial-gradient(circle at top right, rgba(46,214,161,.12), transparent 30%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+        radial-gradient(circle at 14% 5%,rgba(34,158,217,.18),transparent 28%),
+        radial-gradient(circle at 88% 12%,rgba(53,215,160,.12),transparent 24%),
+        linear-gradient(180deg,#06111f 0%,#081625 48%,#06111f 100%);
+      line-height:1.6;
+      overflow-x:hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    img{max-width:100%;display:block}
 
-    .wrap {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
+    .container{
+      width:min(var(--max),calc(100% - 34px));
+      margin-inline:auto;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 22px 0;
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(16px);
+      background:rgba(6,17,31,.72);
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: .2px;
+    .nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
     }
 
-    .logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 10px 30px rgba(32,164,243,.3);
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.1px;
     }
 
-    .nav-link {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
+    .brand-mark{
+      width:46px;
+      height:46px;
+      border-radius:15px;
+      display:grid;
+      place-items:center;
+      font-weight:1000;
+      background:linear-gradient(135deg,var(--blue),var(--green));
+      box-shadow:0 12px 32px rgba(34,158,217,.28);
     }
 
-    .hero {
-      min-height: 78vh;
-      display: grid;
-      grid-template-columns: 1.12fr .88fr;
-      gap: 56px;
-      align-items: center;
-      padding: 54px 0 72px;
+    .brand-copy small{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      margin-top:-2px;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--accent-2);
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .5px;
-      text-transform: uppercase;
+    .nav-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      min-height:44px;
+      padding:0 17px;
+      border-radius:12px;
+      background:rgba(34,158,217,.13);
+      border:1px solid rgba(34,158,217,.34);
+      color:#dcf5ff;
+      font-size:14px;
+      font-weight:850;
     }
 
-    h1 {
-      margin: 18px 0 18px;
-      font-size: clamp(42px, 6vw, 72px);
-      line-height: 1.03;
-      letter-spacing: -2.4px;
+    .hero{
+      padding:86px 0 72px;
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:58px;
+      align-items:center;
+      min-height:calc(100vh - 74px);
     }
 
-    .gradient-text {
-      background: linear-gradient(90deg, #ffffff, #86d7ff 48%, #7ff1c8);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:8px 13px;
+      border-radius:999px;
+      background:rgba(53,215,160,.08);
+      border:1px solid rgba(53,215,160,.24);
+      color:#91f3d0;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.6px;
+      text-transform:uppercase;
     }
 
-    .hero p {
-      margin: 0 0 28px;
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 18px;
+    .pulse{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 0 0 rgba(53,215,160,.45);
+      animation:pulse 1.8s infinite;
     }
 
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(53,215,160,.42)}
+      70%{box-shadow:0 0 0 10px rgba(53,215,160,0)}
+      100%{box-shadow:0 0 0 0 rgba(53,215,160,0)}
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 56px;
-      padding: 0 24px;
-      border-radius: 14px;
-      font-weight: 900;
-      transition: .2s ease;
-      border: 1px solid transparent;
+    h1{
+      margin:19px 0 20px;
+      max-width:760px;
+      font-size:clamp(45px,6.3vw,78px);
+      line-height:1.01;
+      letter-spacing:-2.7px;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #177dd7);
-      color: white;
-      box-shadow: 0 14px 35px rgba(32,164,243,.28);
+    .gradient{
+      background:linear-gradient(90deg,#fff 0%,#8ad9ff 50%,#86efd0 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
 
-    .btn-primary:hover { transform: translateY(-2px); }
-
-    .btn-secondary {
-      border-color: var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
+    .hero-copy{
+      margin:0;
+      max-width:700px;
+      color:var(--muted);
+      font-size:18px;
     }
 
-    .microcopy {
-      margin-top: 13px;
-      color: var(--muted);
-      font-size: 13px;
+    .cta-row{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:30px;
     }
 
-    .proof-card {
-      position: relative;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
-      box-shadow: var(--shadow);
-      overflow: hidden;
+    .btn{
+      min-height:58px;
+      padding:0 24px;
+      border-radius:14px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:1px solid transparent;
+      font-weight:950;
+      transition:.2s ease;
+      cursor:pointer;
     }
 
-    .proof-card::before {
-      content: "";
-      position: absolute;
-      inset: -70px auto auto -70px;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: rgba(32,164,243,.16);
-      filter: blur(8px);
+    .btn:hover{transform:translateY(-2px)}
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--blue),var(--blue2));
+      color:#fff;
+      box-shadow:0 16px 38px rgba(34,158,217,.30);
     }
 
-    .terminal {
-      position: relative;
-      border: 1px solid var(--line);
-      background: #07101b;
-      border-radius: 18px;
-      padding: 18px;
+    .btn-secondary{
+      background:rgba(255,255,255,.045);
+      border-color:var(--line);
+      color:#edf7ff;
     }
 
-    .terminal-top {
-      display: flex;
-      gap: 7px;
-      margin-bottom: 18px;
+    .micro{
+      margin-top:14px;
+      color:#8698ac;
+      font-size:13px;
     }
 
-    .dot { width: 9px; height: 9px; border-radius: 50%; background: #445064; }
-
-    .trade {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,.07);
+    .hero-points{
+      margin-top:28px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      max-width:760px;
     }
 
-    .trade:last-child { border-bottom: 0; }
-
-    .trade strong { font-size: 14px; }
-    .trade span { color: var(--muted); font-size: 13px; }
-
-    .positive { color: var(--accent-2) !important; font-weight: 800; }
-    .neutral { color: var(--warning) !important; font-weight: 800; }
-
-    section { padding: 78px 0; }
-
-    .section-head {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 38px;
+    .hero-point{
+      padding:14px 15px;
+      border-radius:14px;
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(255,255,255,.075);
+      color:#d9e6f2;
+      font-size:13px;
+      font-weight:750;
     }
 
-    .section-head h2 {
-      margin: 0 0 12px;
-      font-size: clamp(30px, 4vw, 46px);
-      letter-spacing: -1.3px;
+    .hero-point span{
+      color:var(--green);
+      margin-right:6px;
     }
 
-    .section-head p { margin: 0; color: var(--muted); }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    .phone-wrap{
+      position:relative;
+      display:flex;
+      justify-content:center;
     }
 
-    .card {
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--card);
+    .glow{
+      position:absolute;
+      width:360px;
+      height:360px;
+      border-radius:50%;
+      background:rgba(34,158,217,.18);
+      filter:blur(65px);
+      top:70px;
     }
 
-    .icon {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      margin-bottom: 16px;
-      background: rgba(32,164,243,.13);
-      font-size: 22px;
+    .phone{
+      position:relative;
+      width:min(390px,100%);
+      padding:16px;
+      border-radius:34px;
+      border:1px solid rgba(255,255,255,.15);
+      background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.035));
+      box-shadow:var(--shadow);
+      transform:rotate(1.5deg);
     }
 
-    .card h3 { margin: 0 0 10px; }
-    .card p { margin: 0; color: var(--muted); font-size: 15px; }
-
-    .cta-panel {
-      padding: 42px;
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      text-align: center;
-      background: linear-gradient(135deg, rgba(32,164,243,.14), rgba(46,214,161,.08));
-      box-shadow: var(--shadow);
+    .phone-inner{
+      padding:18px;
+      border-radius:25px;
+      background:#081421;
+      border:1px solid rgba(255,255,255,.08);
     }
 
-    .cta-panel h2 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 44px); }
-    .cta-panel p { margin: 0 auto 24px; max-width: 700px; color: var(--muted); }
-
-    .disclaimer {
-      padding: 24px;
-      border-left: 3px solid var(--warning);
-      border-radius: 12px;
-      background: rgba(255,209,102,.06);
-      color: #c7d0dc;
-      font-size: 13px;
+    .channel-head{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding-bottom:15px;
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
 
-    footer {
-      padding: 28px 0 38px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
+    .channel-icon{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      font-weight:950;
+      background:linear-gradient(135deg,var(--blue),var(--green));
     }
 
-    @media (max-width: 860px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 34px;
-        padding-top: 34px;
+    .channel-head strong{display:block}
+    .channel-head small{color:var(--muted)}
+
+    .post{
+      margin-top:14px;
+      padding:15px;
+      border-radius:15px;
+      background:#0d2033;
+      border:1px solid rgba(255,255,255,.07);
+    }
+
+    .post-top{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+      margin-bottom:7px;
+    }
+
+    .post-top strong{font-size:13px}
+    .label{
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:10px;
+      font-weight:950;
+      letter-spacing:.4px;
+    }
+
+    .live{background:rgba(244,201,93,.13);color:#ffe08a}
+    .result{background:rgba(53,215,160,.12);color:#83eac8}
+    .vip{background:rgba(34,158,217,.14);color:#89d8ff}
+
+    .post p{
+      margin:0;
+      color:#becbd8;
+      font-size:12px;
+      line-height:1.5;
+    }
+
+    .stats{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+
+    .stat{
+      text-align:center;
+      padding:12px 8px;
+      border-radius:13px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .stat strong{
+      display:block;
+      font-size:15px;
+    }
+
+    .stat small{
+      color:var(--muted);
+      font-size:10px;
+    }
+
+    section{padding:82px 0}
+
+    .section-head{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 38px;
+    }
+
+    .section-head .kicker{
+      color:#83eac8;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:12px;
+      font-weight:950;
+    }
+
+    .section-head h2{
+      margin:8px 0 12px;
+      font-size:clamp(32px,4.5vw,52px);
+      line-height:1.08;
+      letter-spacing:-1.6px;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .feature{
+      padding:28px;
+      border-radius:20px;
+      background:var(--panel);
+      border:1px solid var(--line);
+      transition:.2s ease;
+    }
+
+    .feature:hover{
+      transform:translateY(-4px);
+      background:var(--panel-strong);
+    }
+
+    .feature-icon{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      font-size:22px;
+      background:rgba(34,158,217,.12);
+      border:1px solid rgba(34,158,217,.16);
+      margin-bottom:17px;
+    }
+
+    .feature h3{
+      margin:0 0 10px;
+      font-size:20px;
+    }
+
+    .feature p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .journey{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      counter-reset:steps;
+    }
+
+    .step{
+      position:relative;
+      padding:26px 22px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      counter-increment:steps;
+    }
+
+    .step::before{
+      content:counter(steps);
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      margin-bottom:17px;
+      color:#fff;
+      font-weight:950;
+      background:linear-gradient(135deg,var(--blue),var(--green));
+    }
+
+    .step h3{margin:0 0 8px;font-size:17px}
+    .step p{margin:0;color:var(--muted);font-size:14px}
+
+    .vip-box{
+      display:grid;
+      grid-template-columns:1fr .8fr;
+      gap:34px;
+      align-items:center;
+      padding:40px;
+      border-radius:27px;
+      border:1px solid rgba(34,158,217,.24);
+      background:
+        linear-gradient(135deg,rgba(34,158,217,.14),rgba(53,215,160,.07)),
+        rgba(255,255,255,.025);
+      box-shadow:var(--shadow);
+    }
+
+    .vip-box h2{
+      margin:0 0 13px;
+      font-size:clamp(32px,4.2vw,50px);
+      letter-spacing:-1.5px;
+      line-height:1.08;
+    }
+
+    .vip-box p{
+      color:var(--muted);
+      margin:0 0 24px;
+    }
+
+    .vip-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .vip-item{
+      padding:14px 15px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:#dce7f1;
+      font-size:14px;
+      font-weight:730;
+    }
+
+    .vip-item span{
+      color:var(--green);
+      margin-right:8px;
+    }
+
+    .disclaimer{
+      padding:24px;
+      border-radius:16px;
+      border-left:3px solid var(--gold);
+      background:rgba(244,201,93,.055);
+      color:#bfcbd8;
+      font-size:13px;
+    }
+
+    footer{
+      padding:25px 0 105px;
+      text-align:center;
+      color:#8292a6;
+      font-size:13px;
+    }
+
+    .floating{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:120;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-height:54px;
+      padding:0 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--blue),var(--blue2));
+      color:#fff;
+      font-weight:950;
+      box-shadow:0 17px 40px rgba(34,158,217,.38);
+      border:1px solid rgba(255,255,255,.15);
+    }
+
+    .telegram-icon{
+      width:22px;
+      height:22px;
+      display:inline-grid;
+      place-items:center;
+    }
+
+    @media(max-width:950px){
+      .hero{
+        grid-template-columns:1fr;
+        min-height:auto;
+        padding-top:65px;
       }
-      .grid { grid-template-columns: 1fr; }
-      .proof-card { max-width: 620px; }
+      .phone{transform:none}
+      .phone-wrap{margin-top:12px}
+      .feature-grid{grid-template-columns:1fr}
+      .journey{grid-template-columns:repeat(2,1fr)}
+      .vip-box{grid-template-columns:1fr}
     }
 
-    @media (max-width: 560px) {
-      .nav { padding: 16px 0; }
-      .nav-link { display: none; }
-      h1 { font-size: 44px; letter-spacing: -1.4px; }
-      .hero p { font-size: 16px; }
-      .btn { width: 100%; }
-      .cta-panel { padding: 30px 20px; }
-      section { padding: 58px 0; }
+    @media(max-width:640px){
+      .container{width:min(var(--max),calc(100% - 24px))}
+      .nav{min-height:66px}
+      .brand-copy small{display:none}
+      .nav-cta{display:none}
+      .hero{padding:48px 0 52px}
+      h1{
+        font-size:45px;
+        letter-spacing:-1.8px;
+      }
+      .hero-copy{font-size:16px}
+      .cta-row{display:grid}
+      .btn{width:100%}
+      .hero-points{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+      section{padding:60px 0}
+      .journey{grid-template-columns:1fr}
+      .vip-box{padding:28px 20px}
+      .floating{
+        left:12px;
+        right:12px;
+        bottom:12px;
+        justify-content:center;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header class="wrap">
-    <nav class="nav">
-      <div class="brand">
-        <div class="logo">FX</div>
-        <div>FX Growth Academy</div>
-      </div>
-      <a class="nav-link" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener">Open Telegram ↗</a>
-    </nav>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="brand-mark">FX</span>
+        <span class="brand-copy">
+          FX Growth Academy
+          <small>Gold Trading Community</small>
+        </span>
+      </a>
+
+      <a class="nav-cta telegram-link" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener">
+        Open Telegram ↗
+      </a>
+    </div>
   </header>
 
   <main>
-    <section class="hero wrap">
+    <section class="container hero">
       <div>
-        <div class="eyebrow">Free Public Telegram Channel</div>
-        <h1><span class="gradient-text">Trade Gold Smarter.</span><br />Follow the Proof.</h1>
-        <p>
-          Join our public Telegram channel for XAUUSD trade setups, live market updates,
-          transparent signal results, and details about our VIP membership.
+        <div class="badge"><span class="pulse"></span> Free Public Telegram Channel</div>
+
+        <h1>
+          Follow Gold Setups.<br>
+          <span class="gradient">Review the Results.</span>
+        </h1>
+
+        <p class="hero-copy">
+          Join FX Growth Academy for XAUUSD trade setups, live market updates,
+          transparent signal outcomes, and clear information about our VIP channel.
         </p>
+
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener">
+          <a class="btn btn-primary telegram-link" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener">
             Join Free Telegram Channel
           </a>
-          <a class="btn btn-secondary" href="#inside">See What’s Inside</a>
+          <a class="btn btn-secondary" href="#inside">See What You’ll Find</a>
         </div>
-        <div class="microcopy">Free to join • Review the channel before choosing VIP</div>
+
+        <div class="micro">Free to join • Review the public channel before choosing VIP</div>
+
+        <div class="hero-points">
+          <div class="hero-point"><span>✓</span> XAUUSD-focused content</div>
+          <div class="hero-point"><span>✓</span> Trade progress updates</div>
+          <div class="hero-point"><span>✓</span> VIP plans and offers</div>
+        </div>
       </div>
 
-      <div class="proof-card" aria-label="Telegram channel preview">
-        <div class="terminal">
-          <div class="terminal-top">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          </div>
-          <div class="trade">
-            <div><strong>XAUUSD Setup</strong><br><span>Entry zone & risk plan</span></div>
-            <span class="neutral">LIVE</span>
-          </div>
-          <div class="trade">
-            <div><strong>Trade Update</strong><br><span>Market movement & progress</span></div>
-            <span class="positive">UPDATED</span>
-          </div>
-          <div class="trade">
-            <div><strong>Signal Result</strong><br><span>Transparent outcome posting</span></div>
-            <span class="positive">POSTED</span>
-          </div>
-          <div class="trade">
-            <div><strong>VIP Membership</strong><br><span>Plans, features & offers</span></div>
-            <span>INFO</span>
+      <div class="phone-wrap">
+        <div class="glow"></div>
+
+        <div class="phone">
+          <div class="phone-inner">
+            <div class="channel-head">
+              <div class="channel-icon">FX</div>
+              <div>
+                <strong>FX Growth Academy</strong>
+                <small>Public Telegram Channel</small>
+              </div>
+            </div>
+
+            <div class="post">
+              <div class="post-top">
+                <strong>XAUUSD Trade Setup</strong>
+                <span class="label live">LIVE</span>
+              </div>
+              <p>Market context, entry area, invalidation and risk-management notes.</p>
+            </div>
+
+            <div class="post">
+              <div class="post-top">
+                <strong>Trade Progress Update</strong>
+                <span class="label result">UPDATED</span>
+              </div>
+              <p>Follow the setup as market conditions change and the trade develops.</p>
+            </div>
+
+            <div class="post">
+              <div class="post-top">
+                <strong>VIP Membership</strong>
+                <span class="label vip">INFO</span>
+              </div>
+              <p>Review current plans, channel features, offers and subscription details.</p>
+            </div>
+
+            <div class="stats">
+              <div class="stat"><strong>Gold</strong><small>Main Focus</small></div>
+              <div class="stat"><strong>Live</strong><small>Updates</small></div>
+              <div class="stat"><strong>Free</strong><small>Public Access</small></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="inside">
-      <div class="wrap">
+      <div class="container">
         <div class="section-head">
-          <h2>What You’ll Find Inside</h2>
-          <p>Everything is designed to help visitors understand our approach before deciding whether VIP access is right for them.</p>
+          <div class="kicker">What’s Inside</div>
+          <h2>A Clearer Way to Evaluate Our Trading Community</h2>
+          <p>
+            Start with the free public channel, observe the content, and decide whether the VIP service matches your needs.
+          </p>
         </div>
 
-        <div class="grid">
-          <article class="card">
-            <div class="icon">📊</div>
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="feature-icon">📊</div>
             <h3>XAUUSD Trade Setups</h3>
-            <p>Selected Gold trade ideas, market context, entry zones, and ongoing trade updates.</p>
+            <p>Selected Gold trading ideas with market context, entry areas and trade-management updates.</p>
           </article>
 
-          <article class="card">
-            <div class="icon">✅</div>
-            <h3>Transparent Results</h3>
-            <p>Signal outcomes, screenshots, and performance-related updates published in the public channel.</p>
+          <article class="feature">
+            <div class="feature-icon">✅</div>
+            <h3>Transparent Outcomes</h3>
+            <p>Signal results and progress updates are shared so visitors can review the channel before subscribing.</p>
           </article>
 
-          <article class="card">
-            <div class="icon">⭐</div>
+          <article class="feature">
+            <div class="feature-icon">⭐</div>
             <h3>VIP Membership Details</h3>
-            <p>See what the VIP channel includes, current plans, limited offers, and how to subscribe.</p>
+            <p>See what the private channel includes, how subscriptions work and which offers are currently available.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="wrap">
-        <div class="cta-panel">
-          <h2>Start With the Free Channel</h2>
-          <p>Watch the signals, review the updates, and decide at your own pace. No pressure—join the public channel first.</p>
-          <a class="btn btn-primary" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener">
-            View FX Growth Academy on Telegram
-          </a>
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Simple Funnel</div>
+          <h2>From Advertisement to Informed Decision</h2>
+        </div>
+
+        <div class="journey">
+          <div class="step">
+            <h3>See the Meta Ad</h3>
+            <p>Visitors discover FX Growth Academy through your Facebook or Instagram advertisement.</p>
+          </div>
+
+          <div class="step">
+            <h3>Open This Page</h3>
+            <p>The landing page explains the channel clearly without overwhelming the visitor.</p>
+          </div>
+
+          <div class="step">
+            <h3>Join Telegram</h3>
+            <p>Visitors enter the public channel and review signals, updates and educational posts.</p>
+          </div>
+
+          <div class="step">
+            <h3>Choose VIP</h3>
+            <p>Interested traders can contact you and subscribe after understanding the service.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="wrap">
+      <div class="container">
+        <div class="vip-box">
+          <div>
+            <div class="kicker">VIP Channel</div>
+            <h2>Observe First. Upgrade Only When Ready.</h2>
+            <p>
+              The public channel helps potential members understand your content and communication style before making a paid decision.
+            </p>
+
+            <a class="btn btn-primary telegram-link" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener">
+              View the Free Telegram Channel
+            </a>
+          </div>
+
+          <div class="vip-list">
+            <div class="vip-item"><span>✓</span> Public signals and selected setups</div>
+            <div class="vip-item"><span>✓</span> Ongoing trade and market updates</div>
+            <div class="vip-item"><span>✓</span> VIP service information and offers</div>
+            <div class="vip-item"><span>✓</span> Direct instructions for joining VIP</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
         <div class="disclaimer">
           <strong>Risk Disclaimer:</strong> Trading involves substantial risk and may not be suitable for everyone.
-          Signals, commentary, and past results do not guarantee future performance. Always use appropriate risk
-          management and conduct your own analysis. Nothing on this page is personalised financial advice.
+          Signals, market commentary and past results do not guarantee future performance. Always conduct your own
+          analysis and use appropriate risk management. Nothing on this page is personalised financial advice.
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="wrap">
+  <footer class="container">
     © 2026 FX Growth Academy • Independent trading education and signal community
   </footer>
+
+  <a class="floating telegram-link" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener" aria-label="Join FX Growth Academy on Telegram">
+    <span class="telegram-icon">➤</span>
+    Join Telegram
+  </a>
+
+  <script>
+    // Sends a custom Meta Pixel event after you install your Pixel base code.
+    document.querySelectorAll('.telegram-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'TelegramClick');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
