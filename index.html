@@ -53,11 +53,11 @@
       padding:18px 16px 92px;
     }
     .card{
-      width:min(1180px,100%);
+      width:min(1240px,100%);
       display:grid;
-      grid-template-columns:1.03fr .97fr;
-      gap:24px;
-      align-items:center;
+      grid-template-columns:.96fr 1.04fr;
+      gap:26px;
+      align-items:stretch;
       padding:24px;
       border:1px solid var(--line);
       border-radius:26px;
@@ -171,24 +171,55 @@
     .visual{
       position:relative;
       min-height:560px;
+      display:grid;
+      grid-template-rows:1fr auto;
+      gap:12px;
+    }
+    .chart-wrap{
+      position:relative;
+      min-height:0;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#08121e;
     }
     .hero-chart{
       width:100%;
-      height:560px;
+      height:100%;
+      min-height:365px;
       object-fit:cover;
       object-position:center;
-      border-radius:20px;
-      border:1px solid var(--line);
+      display:block;
       filter:saturate(.95) contrast(1.02);
     }
-    .proof-strip{
+    .trust-card{
       position:absolute;
-      left:18px;
-      right:18px;
-      bottom:18px;
+      top:16px;
+      right:16px;
+      width:min(255px,42%);
+      padding:14px;
+      border-radius:16px;
+      background:rgba(4,12,21,.88);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.13);
+      box-shadow:0 14px 35px rgba(0,0,0,.28);
+    }
+    .trust-title{
+      font-weight:1000;
+      color:#fff;
+      margin-bottom:8px;
+      font-size:.92rem;
+    }
+    .trust-item{
+      color:#dce6ef;
+      font-size:.8rem;
+      line-height:1.45;
+      margin:5px 0;
+    }
+    .proof-strip{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:10px;
+      gap:12px;
     }
     .proof{
       position:relative;
@@ -201,7 +232,7 @@
     .proof img{
       display:block;
       width:100%;
-      height:185px;
+      height:205px;
       object-fit:cover;
       object-position:top;
     }
@@ -226,7 +257,7 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:10px;
-      width:min(760px,calc(100% - 28px));
+      width:min(650px,calc(100% - 36px));
     }
     .float{
       display:flex;
@@ -252,7 +283,8 @@
       .card{grid-template-columns:1fr;max-width:720px}
       .visual{min-height:auto}
       .hero-chart{height:370px}
-      .proof img{height:150px}
+      .trust-card{width:min(240px,46%)}
+      .proof img{height:165px}
     }
     @media(max-width:620px){
       .page{padding:10px 10px 88px}
@@ -262,7 +294,15 @@
       h1{text-align:center;font-size:2.45rem}
       .sub{text-align:center;font-size:.98rem}
       .benefits{grid-template-columns:1fr}
-      .visual{display:none}
+      .visual{display:grid}
+      .hero-chart{height:260px;min-height:260px}
+      .trust-card{
+        position:static;
+        width:auto;
+        margin:10px;
+      }
+      .proof-strip{grid-template-columns:1fr}
+      .proof img{height:180px}
       .offer{text-align:center}
       .cta{font-size:.94rem}
       .cta-row{grid-template-columns:1fr}
@@ -316,7 +356,17 @@
       </div>
 
       <div class="visual">
-        <img class="hero-chart" src="hero-chart.png" alt="XAUUSD chart analysis">
+        <div class="chart-wrap">
+          <img class="hero-chart" src="hero-chart.png" alt="XAUUSD chart analysis">
+
+          <div class="trust-card">
+            <div class="trust-title">Why traders follow FX Growth Academy</div>
+            <div class="trust-item">📊 Daily XAUUSD analysis</div>
+            <div class="trust-item">⚡ Real-time trade ideas</div>
+            <div class="trust-item">✅ Entry and exit updates</div>
+            <div class="trust-item">💬 Telegram and WhatsApp access</div>
+          </div>
+        </div>
 
         <div class="proof-strip">
           <div class="proof">
