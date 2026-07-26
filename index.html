@@ -217,22 +217,35 @@
       font-weight:900;
       border:1px solid rgba(255,255,255,.12);
     }
-    .float{
+    .float-dock{
       position:fixed;
       left:50%;
       bottom:14px;
       transform:translateX(-50%);
       z-index:30;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      width:min(760px,calc(100% - 28px));
+    }
+    .float{
       display:flex;
       align-items:center;
       justify-content:center;
-      width:min(620px,calc(100% - 28px));
-      padding:14px 18px;
+      min-height:52px;
+      padding:13px 16px;
       border-radius:999px;
-      background:var(--green);
       color:#031309;
       font-weight:1000;
+      text-align:center;
+    }
+    .float-telegram{
+      background:var(--green);
       box-shadow:0 16px 42px rgba(39,212,106,.36);
+    }
+    .float-whatsapp{
+      background:linear-gradient(180deg,#34e27d,#20bd5c);
+      box-shadow:0 16px 42px rgba(37,211,102,.32);
     }
 
     @media(max-width:900px){
@@ -253,6 +266,8 @@
       .offer{text-align:center}
       .cta{font-size:.94rem}
       .cta-row{grid-template-columns:1fr}
+      .float-dock{grid-template-columns:1fr;gap:7px}
+      .float{min-height:46px;font-size:.86rem;padding:10px 13px}
     }
   </style>
 </head>
@@ -317,9 +332,14 @@
     </section>
   </main>
 
-  <a class="float tg" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener">
-    🔥 Join Telegram + Claim the Premium Strategy
-  </a>
+  <div class="float-dock">
+    <a class="float float-telegram tg" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener">
+      ✈ Join Telegram
+    </a>
+    <a class="float float-whatsapp wa-track" href="https://whatsapp.com/channel/0029VbDHXARHwXbBZConuz0W" target="_blank" rel="noopener">
+      💬 Join WhatsApp
+    </a>
+  </div>
 
   <script>
     document.querySelectorAll('.tg').forEach(function(link){
