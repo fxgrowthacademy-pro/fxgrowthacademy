@@ -151,6 +151,16 @@
       transition:.2s ease;
     }
     .cta:hover{transform:translateY(-2px)}
+    .cta-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+    .wa{
+      background:linear-gradient(180deg,#34e27d,#20bd5c);
+      color:#031309;
+      box-shadow:0 15px 40px rgba(37,211,102,.28);
+    }
     .micro{
       margin-top:8px;
       color:#91a2b3;
@@ -242,6 +252,7 @@
       .visual{display:none}
       .offer{text-align:center}
       .cta{font-size:.94rem}
+      .cta-row{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -275,9 +286,14 @@
           <div class="benefit"><b>✅ Live Updates</b>Trade progress and result follow-up</div>
         </div>
 
-        <a class="cta tg" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener">
-          ✈ JOIN TELEGRAM & CLAIM THE PREMIUM STRATEGY
-        </a>
+        <div class="cta-row">
+          <a class="cta tg" href="https://t.me/fxgrowthacademy" target="_blank" rel="noopener">
+            ✈ JOIN TELEGRAM & CLAIM THE PREMIUM STRATEGY
+          </a>
+          <a class="cta wa wa-track" href="https://whatsapp.com/channel/0029VbDHXARHwXbBZConuz0W" target="_blank" rel="noopener">
+            💬 JOIN WHATSAPP CHANNEL
+          </a>
+        </div>
 
         <div class="micro">
           Free access • No credit card • No registration form • Join in seconds
@@ -313,6 +329,14 @@
             page_version:'One-Screen-V5',
             offer:'Premium Secret Gold Strategy Free Access'
           });
+        }
+      });
+    });
+
+    document.querySelectorAll('.wa-track').forEach(function(link){
+      link.addEventListener('click', function(){
+        if (typeof fbq === 'function') {
+          fbq('trackCustom','WhatsAppClick');
         }
       });
     });
